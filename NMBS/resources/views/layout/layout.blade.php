@@ -8,7 +8,7 @@
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
-
+     <link rel="shortcut icon" href="{{{ asset('/logo-nmbs.png') }}}">
     <style>
         html, body {
             height: 100%;
@@ -19,6 +19,9 @@
         }
         h2 {
             text-align: center;;
+        }
+        .navbar {
+            background-color: black;
         }
     </style>
 </head>
@@ -34,7 +37,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">Brand</a>
+                    <a class="navbar-brand" href="#"><img src="{{{ asset('/logo-nmbs.png') }}}" style="width:30px;height:30px;"></a>
                 </div>
 
                 <!-- Collect the nav links, forms, and other content for toggling -->

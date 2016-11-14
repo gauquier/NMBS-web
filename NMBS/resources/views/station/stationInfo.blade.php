@@ -4,30 +4,42 @@
     <div class="jumbotron">
         <div>
             <h2>
-                Zoek realtime informatie
+                Station info
             </h2>
             <div>
-                <div id="stationInput">
-                    <label >Station</label>
-                    <input type="text">
+                <div class="form-group row">
+                    <label class="col-xs-1 col-form-label">Station: </label>
+                    <div class="col-xs-5">
+                        <select class="form-control" id="Station">
+                            <option>station naam</option>
+                        </select>
+
+                    </div>
                 </div>
             </div>
-            <div class="booking-date">
-                <div class="booking-input">
-                    <div class="dateBox">
-                            <label for="dateRealTimeInput">Datum (dd/mm/jjjj)</label>
-                            <input type="text" value="31/10/2016" id="dateRealTimeInput" title="(dd/mm/jjjj)" >
-                    </div>
-                    <div>
-                        <div class="hoursInput">
-                                <label>Tijd</label>
-                                <input type="text" value="16:30" >
-                        </div>
-                        <div>
-                            <input type="radio"  checked="checked" class="js-departure-radio-realtime"><label>Vertrek</label>
-                            <input type="radio"><label>Aankomst</label>
+            <div>
+                <div>
+                    <div class="form-group row">
+                        <label class="col-xs-1 col-form-label">Datum:</label>
+                        <div class="col-xs-5">
+                            <input type="text" value="31/10/2016" id="" title="(dd/mm/jjjj)" >
                         </div>
                     </div>
+                    <div class="form-group row">
+                        <label class="col-xs-1 col-form-label">Tijd: </label>
+                        <div class="col-xs-5">
+                            <input type="text" value="16:30" >
+                        </div>
+                    </div>
+                     <div class="form-group row">
+                        <label class="form-check-inline">
+                            <input class="form-check-input" type="radio" id="inlineCheckbox1" value="option1" name="select"> Vertrek
+                        </label>
+                        <label class="form-check-inline">
+                            <input class="form-check-input" type="radio" id="inlineCheckbox2" value="option2" name="select"> Aankomst
+                        </label>
+                    </div>
+                        
                 </div>
             </div>
             <div>
