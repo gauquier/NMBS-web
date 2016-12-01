@@ -5,7 +5,7 @@
 	<div class="jumbotron">
         <div>
             <h2>
-                Station info
+                Trein info
             </h2>
                
             <div class="form-group row">
@@ -13,11 +13,11 @@
                     <thead>
                       <tr>
                         <th>Tijd</th>
-                        <th>Richting</th>
+                        <th>Station</th>
                         <th>Spoor</th>
                       </tr>
                     </thead>
-                    @foreach($data['departures']['departure'] as $station)
+                    @foreach($data['stops']['stop'] as $station)
                         <tbody>
                           <tr>
                             <td>{{ $station['time'] }}</td>
@@ -26,7 +26,8 @@
                           </tr>
                         </tbody>
                     @endforeach
-                </table>
+                    
+                  </table>
             </div>
         </div>
     </div>

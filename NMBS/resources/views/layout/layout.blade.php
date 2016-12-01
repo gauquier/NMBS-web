@@ -19,8 +19,18 @@
         h2 {
             text-align: center;;
         }
-        .navbar {
-            background-color: black;
+        .container-fluid {
+            background-color: #98dafc;
+        }
+        .navbar-default .navbar-nav>li>a {
+            color: white;
+        }
+        .container .jumbotron, .container-fluid .jumbotron {
+            background-color: #98dafc;
+            color: white;
+        }
+        input {
+            color: black;
         }
     </style>
 </head>

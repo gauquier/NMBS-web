@@ -6,12 +6,20 @@
             <h2>
                 Trein info
             </h2>
-            <form method="post" action="/trein" enctype="multipart/form-data">
+            <form method="get" action="/trein" enctype="multipart/form-data">
                 <div>
                     <div class="form-group row">
-                        <label class="col-xs-1 col-form-label">Trein nummer: </label>
+                        @if ($errors->has('nummer'))<p id="alert" class="help-block"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                                {{ $errors->first('nummer') }}</p>
+                        @endif
+                        <label class="col-xs-1 col-form-label" id="nummer">Trein nummer: </label>
                         <div class="col-xs-5">
-                        	<input type="text">
+                            @if ($errors->has('nummer'))
+                                 <input type="text" class="form-control" id="alertInput" name="nummer" value="{{ old('nummer') }}">
+                            @else
+                                 <input type="text" class="form-control" id="nummer" name="nummer" value="{{ old('nummer') }}">
+                            @endif
+                        	
                         </div>
                     </div>
                 </div>
@@ -20,15 +28,16 @@
                         <div class="form-group row">
                             <label class="col-xs-1 col-form-label">Datum:</label>
                             <div class="col-xs-5">
-                                <input type="text" value="31/10/2016" id="" title="(dd/mm/jjjj)" >
+                                <input type="text" id="date" value="{{ $ldate = date('d-m-Y') }}" title="(dd/mm/jjjj)" >
                             </div>
                         </div>
                     </div>
                 </div>
                 <div>
-                    <input type="submit">
+                    <input type="submit" class="btn btn-primary">
                 </div>
             </form>
         </div>
     </div>
+
 @endsection

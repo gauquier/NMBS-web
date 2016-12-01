@@ -7,19 +7,24 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use GuzzleHttp\Client;
 use \SimpleXMLElement;
+use Input;
 
 class stationInfo extends Controller
 {
-	public function getStation(){
-		$client = new Client(['base_uri' => 'https://api.irail.be/liveboard/']);
-		$response = $client->get('?station=Brussels&fast=true');
-		$data = new SimpleXMLElement((string) $response->getBody());
-		
-		// if ($response->getBody()) {
-		//    echo $response->getBody();
-		    // JSON string: { ... }
-		// }
+	public function getStation(Request $request){
 
-		return view('station.stationInfoResponse')->with('data', $data );
+		$client = new Client(['base_uri' => 'https://api.irail.be/liveboard/']);
+		$response = $client->get('?station='.$request->input('Station').'&fast=true&format=json');
+		$data = $response->getBody();
+		
+		return view('station.stationInfoResponse')->with('data', json_decode($data, true));
 	}
+
+	public function getAllStations(){
+		$client = new Client(['base_uri' => 'http://data.irail.be/NMBS/']);
+		$response = $client->get('Stations.json');
+		$data = $response->getBody();
+
+		return view('station.stationInfo')->with('data', json_decode($data, true) );
+	}	
 }

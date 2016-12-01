@@ -14,12 +14,10 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/stationInfo', function () {
-    return view('station.stationInfo');
-});
-Route::get('/routeInfo', function () {
-    return view('route.routeInfo');
-});
+Route::get('/stationInfo', 'stationInfo@getAllStations');
+
+Route::get('/routeInfo', 'RouteInfo@getAllStations');
+
 Route::get('/treinInfo', function () {
     return view('trein.treinInfo');
 });
@@ -27,3 +25,5 @@ Route::get('/treinInfo', function () {
 Route::get('/trein', 'treinInfo@getTrein');
 
 Route::get('/station', 'stationInfo@getStation');
+
+Route::get('/routeInfoGegevens', 'RouteInfo@getRoute');
