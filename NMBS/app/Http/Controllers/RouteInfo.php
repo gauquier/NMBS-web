@@ -13,7 +13,7 @@ class RouteInfo extends Controller
 {
 	public function getRoute(Request $request){
 		$client = new Client(['base_uri' => 'https://api.irail.be/connections/']);
-		$response = $client->get('?to={'.$request->input('van').'}&from={'.$request->input('naar').'}');
+		$response = $client->get('?to={'.$request->input('naar').'}&from={'.$request->input('van').'}');
 		$data = $response->getBody();
 
 		return view('route.routeInfo')->with('data', json_decode($data, true) );

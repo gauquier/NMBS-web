@@ -24,16 +24,6 @@
                     </div>
                 </div>
                 <div>
-                    <div>
-                        <div class="form-group row">
-                            <label class="col-xs-1 col-form-label">Datum:</label>
-                            <div class="col-xs-5">
-                                <input type="text" id="date" value="{{ $ldate = date('d-m-Y') }}" title="(dd/mm/jjjj)" >
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div>
                     <input type="submit" class="btn btn-primary">
                 </div>
             </form>

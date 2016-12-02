@@ -1,7 +1,7 @@
 @extends('layout.layout')
 
 @section('content')
-
+    
 	<div class="jumbotron">
         <div>
             <h2>

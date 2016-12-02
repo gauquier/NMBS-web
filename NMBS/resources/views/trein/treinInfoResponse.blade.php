@@ -1,7 +1,6 @@
 @extends('layout.layout')
 
 @section('content')
-
 	<div class="jumbotron">
         <div>
             <h2>
@@ -12,7 +11,8 @@
                 <table class="table">
                     <thead>
                       <tr>
-                        <th>Tijd</th>
+                        <th>Aankomst uur</th>
+                        <th>Vertrek uur</th>
                         <th>Vertraging</th>
                         <th>Station</th>
                         <th>Spoor</th>
@@ -21,7 +21,8 @@
                     @foreach($data['stops']['stop'] as $station)
                         <tbody>
                           <tr>
-                            <td>{{ $station['time'] }}</td>
+                            <td>{{ $station['scheduledArrivalTime'] }}</td>
+                            <td>{{ $station['scheduledDepartureTime'] }}</td>
                             @if ( $station['delay'] > 0)
                                 <td style="color: red">+ {{ $station['delay'] }} min</td>
                             @else

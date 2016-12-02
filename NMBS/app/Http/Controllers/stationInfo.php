@@ -14,7 +14,7 @@ class stationInfo extends Controller
 	public function getStation(Request $request){
 
 		$client = new Client(['base_uri' => 'https://api.irail.be/liveboard/']);
-		$response = $client->get('?station='.$request->input('Station').'&fast=true&format=json');
+		$response = $client->get('?station='.$request->input('Station').'&arrdep=DEP&fast=true&format=json');
 		$data = $response->getBody();
 		
 		return view('station.stationInfoResponse')->with('data', json_decode($data, true));
