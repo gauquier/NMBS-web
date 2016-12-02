@@ -38,7 +38,7 @@
                         </div>
                          <div class="form-group row">
                             <label class="form-check-inline">
-                                <input class="form-check-input" type="radio" id="inlineCheckbox1" value="option1" name="select"> Vertrek
+                                <input class="form-check-input" type="radio" id="inlineCheckbox1" value="option1" name="select" checked="true"> Vertrek
                             </label>
                             <label class="form-check-inline">
                                 <input class="form-check-input" type="radio" id="inlineCheckbox2" value="option2" name="select"> Aankomst

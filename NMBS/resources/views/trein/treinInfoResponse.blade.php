@@ -13,6 +13,7 @@
                     <thead>
                       <tr>
                         <th>Tijd</th>
+                        <th>Vertraging</th>
                         <th>Station</th>
                         <th>Spoor</th>
                       </tr>
@@ -21,6 +22,11 @@
                         <tbody>
                           <tr>
                             <td>{{ $station['time'] }}</td>
+                            @if ( $station['delay'] > 0)
+                                <td style="color: red">+ {{ $station['delay'] }} min</td>
+                            @else
+                                <td style="color: green">+ {{ $station['delay'] }} min</td>
+                            @endif
                             <td>{{ $station['station'] }}</td>
                             <td>{{ $station['platform'] }}</td>
                           </tr>
