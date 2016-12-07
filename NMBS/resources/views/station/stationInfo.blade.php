@@ -27,13 +27,13 @@
                          
                             <label class="col-xs-1 col-form-label">Datum:</label>
                             <div class="col-xs-5">
-                                <input type="text" value="{{ $ldate = date('d-m-Y') }}" id="" title="(dd/mm/jjjj)" >
+                                <input type="text" value="{{ $ldate = date('d-m-Y') }}" id="date" title="(dd/mm/jjjj)" >
                             </div>
                         </div>
                         <div class="form-group row">
                             <label class="col-xs-1 col-form-label">Tijd: </label>
                             <div class="col-xs-5">
-                                <input type="text" value="{{ $ldate = date('H:i') }}" >
+                                <input type="text" id="time" value="{{ $ldate = date('H:i') }}" >
                             </div>
                         </div>
                          <div class="form-group row">

@@ -21,8 +21,8 @@
                     @foreach($data['stops']['stop'] as $station)
                         <tbody>
                           <tr>
-                            <td>{{ $station['scheduledArrivalTime'] }}</td>
-                            <td>{{ $station['scheduledDepartureTime'] }}</td>
+                            <td>{{ date('H:i',$station['scheduledArrivalTime']) }}</td>
+                            <td>{{ date('H:i',$station['scheduledDepartureTime']) }}</td>
                             @if ( $station['delay'] > 0)
                                 <td style="color: red">+ {{ $station['delay'] }} min</td>
                             @else

@@ -19,21 +19,46 @@
                         <th>Spoor</th>
                       </tr>
                     </thead>
-                    @foreach($data['departures']['departure'] as $station)
-                        <tbody>
-                          <tr>
-                            <td>{{ $station['time'] }}</td>
-                            @if ( $station['delay'] > 0)
-                                <td style="color: red">+ {{ $station['delay'] / 60}} min</td>
-                            @else
-                                <td style="color: green">+ {{ $station['delay'] }} min</td>
-                            @endif
-                            <td>{{ $station['station'] }}</td>
-                            <td>{{ $station['vehicle'] }}</td>
-                            <td>{{ $station['platform'] }}</td>
-                          </tr>
-                        </tbody>
-                    @endforeach
+                    @if ($dep === 'Vertrek')
+                        @foreach($data['departures']['departure'] as $station)
+                            <tbody>
+                              <tr>
+                                <td>{{ date('H:i',$station['time']) }}</td>
+                                @if ( $station['canceled'] == 1)
+                                     <td style="color: red"> Geanulleerd</td>
+                                @else
+                                     @if ( $station['delay'] > 0)
+                                        <td style="color: red">+ {{ $station['delay'] / 60}} min</td>
+                                    @else
+                                        <td style="color: green">+ {{ $station['delay'] }} min</td>
+                                    @endif
+                                @endif
+
+                               
+                                <td>{{ $station['station'] }}</td>
+                                <td>{{ $station['vehicle'] }}</td>
+                                <td>{{ $station['platform'] }}</td>
+                              </tr>
+                            </tbody>
+                        @endforeach
+                    @else
+                        @foreach($data['arrivals']['arrival'] as $station)
+                            <tbody>
+                              <tr>
+                                <td>{{ date('H:i',$station['time']) }}</td>
+                                @if ( $station['delay'] > 0)
+                                    <td style="color: red">+ {{ $station['delay'] / 60}} min</td>
+                                @else
+                                    <td style="color: green">+ {{ $station['delay'] }} min</td>
+                                @endif
+                                <td>{{ $station['station'] }}</td>
+                                <td>{{ $station['vehicle'] }}</td>
+                                <td>{{ $station['platform'] }}</td>
+                              </tr>
+                            </tbody>
+                        @endforeach
+                    @endif
+                    
                 </table>
             </div>
         </div>

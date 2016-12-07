@@ -14,10 +14,20 @@ class stationInfo extends Controller
 	public function getStation(Request $request){
 
 		$client = new Client(['base_uri' => 'https://api.irail.be/liveboard/']);
-		$response = $client->get('?station='.$request->input('Station').'&arrdep=DEP&fast=true&format=json');
+		$input =$request->input('select');
+		$unixTimestamp = date('d/m/y', strtotime($request->input('date')));
+		if ($input == 'Vertrek')
+		{
+			$response = $client->get('?station='.$request->input('Station').'&date='.$request->input('date').'&arrdep=DEP&fast=true&format=json');
+			$dep = 'Vertrek';
+		}
+		else
+		{
+			$response = $client->get('?station='.$request->input('Station').'&date='.$request->input('date').'&arrdep=ARR&fast=true&format=json');
+			$dep = 'Aankomst';
+		}
 		$data = $response->getBody();
-		
-		return view('station.stationInfoResponse')->with('data', json_decode($data, true));
+		return view('station.stationInfoResponse')->with(['data'=>json_decode($data, true),'dep'=>$dep]);
 	}
 
 	public function getAllStations(){
@@ -25,6 +35,6 @@ class stationInfo extends Controller
 		$response = $client->get('Stations.json');
 		$data = $response->getBody();
 
-		return view('station.stationInfo')->with('data', json_decode($data, true) );
+		return view('station.stationInfo')->with('data', json_decode($data, true));
 	}	
 }
