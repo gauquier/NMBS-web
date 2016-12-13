@@ -33,10 +33,8 @@
                                         <td style="color: green">+ {{ $station['delay'] }} min</td>
                                     @endif
                                 @endif
-
-                               
                                 <td>{{ $station['station'] }}</td>
-                                <td>{{ $station['vehicle'] }}</td>
+                                <td>{{ substr($station['vehicle'], 8) }}</td>
                                 <td>{{ $station['platform'] }}</td>
                               </tr>
                             </tbody>
@@ -52,7 +50,7 @@
                                     <td style="color: green">+ {{ $station['delay'] }} min</td>
                                 @endif
                                 <td>{{ $station['station'] }}</td>
-                                <td>{{ $station['vehicle'] }}</td>
+                                <td>{{ substr($station['vehicle'], 8) }}</td>
                                 <td>{{ $station['platform'] }}</td>
                               </tr>
                             </tbody>
