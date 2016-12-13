@@ -54,10 +54,13 @@
                                 <td>{{ $station['platform'] }}</td>
                               </tr>
                             </tbody>
+
                         @endforeach
                     @endif
+
                     
                 </table>
+               
             </div>
         </div>
     </div>
