@@ -24,9 +24,9 @@
                             <td>{{ date('H:i',$station['scheduledArrivalTime']) }}</td>
                             <td>{{ date('H:i',$station['scheduledDepartureTime']) }}</td>
                             @if ( $station['delay'] > 0)
-                                <td style="color: red">+ {{ $station['delay'] }} min</td>
+                                <td style="color: red">+ {{ $station['delay'] / 60 }} min</td>
                             @else
-                                <td style="color: green">+ {{ $station['delay'] }} min</td>
+                                <td style="color: green">+ {{ $station['delay'] / 60 }} min</td>
                             @endif
                             <td>{{ $station['station'] }}</td>
                             <td>{{ $station['platform'] }}</td>

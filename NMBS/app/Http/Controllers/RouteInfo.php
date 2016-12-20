@@ -18,11 +18,12 @@ class RouteInfo extends Controller
 		$to = $request->input('naar');
 		$strTo = substr($to, 8);
 		$date = date('dmy', strtotime($request->input('date')));
-		$time = date('HHMM', strtotime($request->input('time')));
+		$newdate = str_replace("-", "", $request->input('date'));
+		$time = date('Hi', strtotime($request->input('time')));
 		$input =$request->input('select');
 		if ($input == 'Vertrek')
 		{
-			$response = $client->get('?to='.$strTo.'&from='.$strFrom.'&date='.$date.'&time='.$time.'&arrdep=DEP&fast=true&format=json');
+			$response = $client->get('?to='.$strTo.'&from='.$strFrom.'&date='.$newdate.'&time='.$time.'&arrdep=DEP&fast=true&format=json');
 		}
 		else
 		{

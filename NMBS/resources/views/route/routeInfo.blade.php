@@ -40,7 +40,7 @@
                     	<div class="form-group row">
     	                    <label class="col-xs-1 col-form-label">Tijd: </label>
     	                    <div class="col-xs-5">
-    	                    	<input type="text" id="time" value="{{ $ldate = date('H:i') }}" >
+    	                    	<input type="text" id="time" name="time" value="{{ $ldate = date('H:i') }}" >
     	                    </div>
     	                </div>
     		             <div class="form-group row">
