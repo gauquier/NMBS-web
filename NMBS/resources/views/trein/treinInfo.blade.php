@@ -9,8 +9,12 @@
             <form method="get" action="/trein" enctype="multipart/form-data">
                 <div>
                     <div class="form-group row">
-                        @if ($errors->has('nummer'))<p id="alert" class="help-block"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-                                {{ $errors->first('nummer') }}</p>
+
+                        @if ($errors->count())
+                            
+                                <p id="alert" class="help-block"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                                Trein nummer bestaat niet</p>
+                            
                         @endif
                         <label class="col-xs-1 col-form-label" id="nummer">Trein nummer: </label>
                         <div class="col-xs-5">
