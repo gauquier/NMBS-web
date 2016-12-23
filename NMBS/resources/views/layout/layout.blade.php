@@ -46,10 +46,13 @@
         }
         .container .jumbotron, .container-fluid .jumbotron {
             background-color: #98dafc;
-            color: white;
+            color: black;
         }
         input {
             color: black;
+        }
+        #alert{
+            color: red;
         }
     </style>
 </head>

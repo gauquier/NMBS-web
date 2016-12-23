@@ -7,8 +7,11 @@
             <h2>
                 Station info
             </h2>
-               
-            <div class="form-group row">
+             @if ($errors->count())
+                <p id="alert" class="help-block"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>Er werden geen gevens gevonden voor uw zoekopdracht probeer opnieuw! </p>
+                <a href="/stationInfo" class="btn btn-primary" role="button">Nieuwe zoekopdracht</a>
+            @else
+                <div class="form-group row">
                 <table class="table">
                     <thead>
                       <tr>
@@ -57,11 +60,9 @@
 
                         @endforeach
                     @endif
-
-                    
                 </table>
-               
             </div>
+            @endif
         </div>
     </div>
 	

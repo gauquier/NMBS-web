@@ -7,7 +7,10 @@
             <h2>
                 Route info
             </h2>
-               
+             @if ($errors->count())
+                <p id="alert" class="help-block"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>Er werden geen gevens gevonden voor uw zoekopdracht probeer opnieuw! </p>
+                <a href="/routeInfo" class="btn btn-primary" role="button">Nieuwe zoekopdracht</a>
+            @else
             <div class="form-group row">
                 <table class="table">
                     <thead>
@@ -15,7 +18,7 @@
                         <th>Route</th>
                         <th>Tijd</th>
                         <th>Reistijd</th>
-                        <th>Overstappen</th>
+                        <th>Richting</th>
                         <th>Spoor</th>
                       </tr>
                     </thead>
@@ -45,15 +48,22 @@
                                     @endif
                                     </td>
                                     <td>{{ date('H:i',$station['duration']) }} </td>
-                                    <td></td>
+                                    <td>
+                                    @if ( $station['departure']['direction']['name']  ==   $station['arrival']['direction']['name'] )
+                                        {{ $station['departure']['direction']['name'] }}
+                                    @else
+                                      1ste trein:  {{ $station['departure']['direction']['name'] }}
+                                         <br> 
+                                       2de trein: {{ $station['arrival']['direction']['name'] }}
+                                    @endif
+                                    </td>
                                     <td>Vertrek: {{ $station['departure']['platform'] }} <br> Aankomst: {{ $station['arrival']['platform'] }} </td>
                                 </tr>
                             </tbody>
                         @endforeach
-                    
-                    
                 </table>
             </div>
+            @endif
         </div>
     </div>
 	
