@@ -33,7 +33,8 @@
             height: 100%;
         }
         body {
-            background: #00a0de;
+            background-image: url('/nmbsAchtergrond.jpg');
+            background-size: 1900px 1700px;
         }
         h2 {
             text-align: center;;
@@ -78,6 +79,9 @@
                         <li><a href="/routeInfo">Route info</a></li>
                         <li><a href="treinInfo">Trein info</a></li>
                         <li><a href="/stationInfo">Station info</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a  target="_blank" href="http://www.belgianrail.be/jp/sncb-nmbs-routeplanner/help.exe/nn?tpl=rss_feed&">Storingen op het net </a></li>
                     </ul>
                 </div><!-- /.navbar-collapse -->
             </div>

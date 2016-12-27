@@ -6,10 +6,10 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <h1>Welkom bij NMBS <img src="{{{ asset('/logo-nmbs.png') }}}" ></h1>
+                    <h1>Welkom bij NMBS</h1>
                     <hr class="light">
-                    <p class="text-faded">Start Bootstrap has everything you need to get your new website up and running in no time! All of the templates and themes on Start Bootstrap are open source, free to download, and easy to use. No strings attached!</p>
-                    <p><a class="btn btn-primary" target="_blank" href="http://www.belgianrail.be/jp/sncb-nmbs-routeplanner/help.exe/nn?tpl=rss_feed&">Storingen op het net</a></p>
+                    <p class="text-faded">Op onze site kan u <a href="/routeInfo">route</a> , <a href="/treinInfo">trein</a> en <a href="/stationInfo">station</a> info opvragen. </p> <br>
+                    <p>Als ook de <a target="_blank" href="http://www.belgianrail.be/jp/sncb-nmbs-routeplanner/help.exe/nn?tpl=rss_feed&">storingen op het net.</a></p>
                 </div>
             </div>
         </div>
