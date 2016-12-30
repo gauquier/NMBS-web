@@ -9,7 +9,7 @@
             <form method="get" action="/station" enctype="multipart/form-data">
                 <div>
                     <div class="form-group row">
-                        <label class="col-xs-1 col-form-label">Station: </label>
+                        <label class="col-xs-2 col-form-label">Station: </label>
                         <div class="col-xs-5">
                             <select class="form-control" id="Station" name="Station">
                                 @foreach($data['Stations'] as $station)
@@ -25,15 +25,15 @@
                         <div class="form-group row">
                             
                          
-                            <label class="col-xs-1 col-form-label">Datum:</label>
+                            <label class="col-xs-2 col-form-label">Datum:</label>
                             <div class="col-xs-5">
-                                <input type="date" value="<?php echo date('Y-m-d'); ?>" id="date" name="date" title="(dd/mm/jjjj)" >
+                                <input type="date" value="<?php echo date('Y-m-d'); ?>" id="date" name="date" title="(dd/mm/jjjj)" required min="<?php echo date('Y-m-d'); ?>" >
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label class="col-xs-1 col-form-label">Tijd: </label>
+                            <label class="col-xs-2 col-form-label">Tijd: </label>
                             <div class="col-xs-5">
-                                <input type="time" id="time" name="time" value="{{ $ldate = date('H:i') }}" >
+                                <input type="time" id="time" name="time" value="{{ $ldate = date('H:i') }}" required>
                             </div>
                         </div>
                          <div class="form-group row">

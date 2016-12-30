@@ -13,12 +13,12 @@
                                 <p id="alert" class="help-block"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
                                 Trein nummer bestaat niet</p>
                         @endif
-                        <label class="col-xs-1 col-form-label" id="nummer">Trein nummer: </label>
+                        <label class="col-xs-2 col-form-label" id="nummer">Trein nummer: </label>
                         <div class="col-xs-5">
                             @if ($errors->has('nummer'))
-                                 <input type="text" class="form-control" id="alertInput" name="nummer" value="{{ old('nummer') }}">
+                                 <input type="text" class="form-control" id="alertInput" name="nummer" value="{{ old('nummer') }}" required>
                             @else
-                                 <input type="text" class="form-control" id="nummer" name="nummer" value="{{ old('nummer') }}">
+                                 <input type="text" class="form-control" id="nummer" name="nummer" value="{{ old('nummer') }}" required>
                             @endif
                         	
                         </div>

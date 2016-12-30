@@ -9,7 +9,7 @@
              <form method="get" action="/routeInfoGegevens" enctype="multipart/form-data">
                 <div>
                     <div class="form-group row">
-                        <label class="col-xs-1 col-form-label">Van: </label>
+                        <label class="col-xs-2 col-form-label">Van: </label>
                         <div class="col-xs-5">
                         	<select class="form-control" id="van" name="van">
                                 @foreach($data['Stations'] as $station)
@@ -19,7 +19,7 @@
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-xs-1 col-form-label">Naar: </label>
+                        <label class="col-xs-2 col-form-label">Naar: </label>
                         <div class="col-xs-5">
                         	<select class="form-control" id="naar" name="naar">
                                 @foreach($data['Stations'] as $station)
@@ -32,15 +32,15 @@
                 <div>
                     <div>
                     	<div class="form-group row">
-    	                    <label class="col-xs-1 col-form-label">Datum:</label>
+    	                    <label class="col-xs-2 col-form-label">Datum:</label>
     	                    <div class="col-xs-5">
-    	                    	 <input type="text" value="{{ $ldate = date('d-m-Y') }}" id="date" name="date" title="(dd/mm/jjjj)" >
+    	                    	 <input type="date" value="<?php echo date('Y-m-d'); ?>" id="date" name="date" title="(dd/mm/jjjj)" required min="<?php echo date('d/m/Y'); ?>" >
     	                    </div>
     	                </div>
                     	<div class="form-group row">
-    	                    <label class="col-xs-1 col-form-label">Tijd: </label>
+    	                    <label class="col-xs-2 col-form-label">Tijd: </label>
     	                    <div class="col-xs-5">
-    	                    	<input type="text" id="time" name="time" value="{{ $ldate = date('H:i') }}" >
+    	                    	<input type="time" id="time" name="time" value="{{ $ldate = date('H:i') }}" required >
     	                    </div>
     	                </div>
     		             <div class="form-group row">
